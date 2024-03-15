@@ -1,6 +1,33 @@
 package L_Lista;
 
+import java.util.Iterator;
+
 public class Lista {
+
+    class Iteratore{
+        private Nodo nodo;
+
+        private Iteratore(Nodo nodo){
+            this.nodo = nodo;
+        }
+
+        public boolean hasNext(){
+            return nodo != null;    //ha un successivo == true
+        }                           //non ha un successivo == false
+
+        public Nodo next(){
+            if(nodo == null) return null;
+            //Nodo result = new Nodo(nodo.getValore(), nodo.getSuccessivo());
+            Nodo result = nodo;
+            nodo = nodo.getSuccessivo();
+            return result;
+        }
+    }
+
+    public Iteratore getIterator(){
+        Iteratore i = new Iteratore(radice);
+        return i;
+    }
 
     Nodo radice;
     
@@ -56,6 +83,51 @@ public class Lista {
         
     }
 
+    public boolean addAfter(Nodo n, int pos){       //aggiungi n dopo un x(pos) valore
+    /* if (isEmpty()) {
+            return false;
+        }
+
+        Nodo p = radice;
+        
+        for(int i = 0; i <= pos && p != null; i++){
+            if(i == pos-1){
+                n.setSuccessivo(p.getSuccessivo());     //senza usare l'iteratore
+                p.setSuccessivo(n);
+                return true;
+            }else{
+                p = p.getSuccessivo();
+            }
+        }
+        return false;
+    */
+    //Lista.Iteratore iter = l.getIterator();    
+    Iteratore iter = getIterator(); 
+        //aggiunge il nodo n solo dopo il primo nodo
+        int i; Nodo npos = null;
+        for( i = 0; i < pos; i++){
+            if(iter.hasNext()){
+                npos = iter.next();
+            }else{
+                return false; //se non esiste il successivo 
+            }
+        } 
+        n.setSuccessivo(npos.getSuccessivo());
+        npos.setSuccessivo(n);
+        return true;
+    }
+/* 
+    public boolean removePos(int pos){      //rimuovi valore in una posizione precisa
+
+    }
+
+
+    public boolean removeValue(int value){        //rimuovi valore preciso
+        
+
+
+    }
+*/
 
     public String toString() {
         String s = "Elementi della lista: ";
