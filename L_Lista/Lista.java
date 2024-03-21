@@ -1,7 +1,5 @@
 package L_Lista;
 
-import java.util.Iterator;
-
 public class Lista {
 
     class Iteratore{

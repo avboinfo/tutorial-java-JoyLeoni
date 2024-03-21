@@ -1,8 +1,5 @@
 
 package S_Stack;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.*;
 
 public class Main {
@@ -13,9 +10,6 @@ public class Main {
 
         try{
             
-        for(int i = 0; i < sc.hasNextLine(); i++){
-
-        }
         sc.close();
     }catch(Exception e){
         System.out.println("Errore");
