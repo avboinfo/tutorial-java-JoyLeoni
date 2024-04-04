@@ -1,0 +1,5 @@
+Versamento: 2000.0 - Saldo rimanente: 4000.0
+Prelievo: 500.0 - Saldo rimanente: 3500.0
+Prelievo: 400.0 - Saldo rimanente: 3100.0
+Bonifico a Romeo: 200.0 - Saldo rimanente: 2900.0
+Applicato interesse: 0.0 - Saldo rimanente: 0.0
